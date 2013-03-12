@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		23B3F25316EEDEC2004F790C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F25216EEDEC2004F790C /* main.cpp */; };
 		23B3F25516EEDEC2004F790C /* TSND121sample_forOpenGL.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B3F25416EEDEC2004F790C /* TSND121sample_forOpenGL.1 */; };
+		23B3F25C16EEDF80004F790C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3F25B16EEDF80004F790C /* OpenGL.framework */; };
+		23B3F25E16EEDF86004F790C /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3F25D16EEDF86004F790C /* GLUT.framework */; };
+		23B3F26416EEE842004F790C /* TSND121.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F25F16EEE1F7004F790C /* TSND121.cpp */; };
+		23B3F26516EEE842004F790C /* TSND121.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26016EEE1F7004F790C /* TSND121.h */; };
+		23B3F26616EEE842004F790C /* TSNDcommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26116EEE1F7004F790C /* TSNDcommand.cpp */; };
+		23B3F26716EEE842004F790C /* TSNDcommand.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26216EEE1F7004F790C /* TSNDcommand.h */; };
+		23B3F26816EEE842004F790C /* main.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26316EEE23C004F790C /* main.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +35,13 @@
 		23B3F24F16EEDEC2004F790C /* TSND121sample_forOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TSND121sample_forOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B3F25216EEDEC2004F790C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		23B3F25416EEDEC2004F790C /* TSND121sample_forOpenGL.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TSND121sample_forOpenGL.1; sourceTree = "<group>"; };
+		23B3F25B16EEDF80004F790C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		23B3F25D16EEDF86004F790C /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		23B3F25F16EEE1F7004F790C /* TSND121.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TSND121.cpp; sourceTree = "<group>"; };
+		23B3F26016EEE1F7004F790C /* TSND121.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSND121.h; sourceTree = "<group>"; };
+		23B3F26116EEE1F7004F790C /* TSNDcommand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TSNDcommand.cpp; sourceTree = "<group>"; };
+		23B3F26216EEE1F7004F790C /* TSNDcommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSNDcommand.h; sourceTree = "<group>"; };
+		23B3F26316EEE23C004F790C /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B3F25E16EEDF86004F790C /* GLUT.framework in Frameworks */,
+				23B3F25C16EEDF80004F790C /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +60,8 @@
 		23B3F24616EEDEC2004F790C = {
 			isa = PBXGroup;
 			children = (
+				23B3F25D16EEDF86004F790C /* GLUT.framework */,
+				23B3F25B16EEDF80004F790C /* OpenGL.framework */,
 				23B3F25116EEDEC2004F790C /* TSND121sample_forOpenGL */,
 				23B3F25016EEDEC2004F790C /* Products */,
 			);
@@ -60,7 +78,12 @@
 		23B3F25116EEDEC2004F790C /* TSND121sample_forOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				23B3F25F16EEE1F7004F790C /* TSND121.cpp */,
+				23B3F26016EEE1F7004F790C /* TSND121.h */,
+				23B3F26116EEE1F7004F790C /* TSNDcommand.cpp */,
+				23B3F26216EEE1F7004F790C /* TSNDcommand.h */,
 				23B3F25216EEDEC2004F790C /* main.cpp */,
+				23B3F26316EEE23C004F790C /* main.h */,
 				23B3F25416EEDEC2004F790C /* TSND121sample_forOpenGL.1 */,
 			);
 			path = TSND121sample_forOpenGL;
@@ -117,6 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B3F26416EEE842004F790C /* TSND121.cpp in Sources */,
+				23B3F26516EEE842004F790C /* TSND121.h in Sources */,
+				23B3F26616EEE842004F790C /* TSNDcommand.cpp in Sources */,
+				23B3F26716EEE842004F790C /* TSNDcommand.h in Sources */,
+				23B3F26816EEE842004F790C /* main.h in Sources */,
 				23B3F25316EEDEC2004F790C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
