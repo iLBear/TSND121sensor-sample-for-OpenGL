@@ -277,6 +277,17 @@ void keyboard(int key, int x, int y){
             TSND.command.setPressureMeasurement(fd, 0, 5, 0);
             break;
 			
+		case 'i':	//外部拡張計測送信ON
+			TSND.command.setIOMeasurement(fd, 5, 10, 0, true, false);
+			break;
+		case 'I':	//外部拡張計測送信OFF
+			TSND.command.setIOMeasurement(fd, 0, 0, 0, false, false);
+			break;
+			
+		case 'e':	//0x1E: 外部拡張端子計測＆エッジデータ出力設定
+			TSND.command.setExternalIO(fd, 0, 0, 0, 0);
+			break;
+			
 		case 'r':
 			TSND.command.setAccelRange(fd, 0);
 			break;
