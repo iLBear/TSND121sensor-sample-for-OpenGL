@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235D123C16F83BA600C2E062 /* TSND121.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B3F26016EEE1F7004F790C /* TSND121.h */; };
+		235D123D16F83BA900C2E062 /* TSNDcommand.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B3F26216EEE1F7004F790C /* TSNDcommand.h */; };
+		235D123E16F83BAB00C2E062 /* main.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B3F26316EEE23C004F790C /* main.h */; };
 		23B3F25316EEDEC2004F790C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F25216EEDEC2004F790C /* main.cpp */; };
 		23B3F25516EEDEC2004F790C /* TSND121sample_forOpenGL.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B3F25416EEDEC2004F790C /* TSND121sample_forOpenGL.1 */; };
 		23B3F25C16EEDF80004F790C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3F25B16EEDF80004F790C /* OpenGL.framework */; };
 		23B3F25E16EEDF86004F790C /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3F25D16EEDF86004F790C /* GLUT.framework */; };
 		23B3F26416EEE842004F790C /* TSND121.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F25F16EEE1F7004F790C /* TSND121.cpp */; };
-		23B3F26516EEE842004F790C /* TSND121.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26016EEE1F7004F790C /* TSND121.h */; };
 		23B3F26616EEE842004F790C /* TSNDcommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26116EEE1F7004F790C /* TSNDcommand.cpp */; };
-		23B3F26716EEE842004F790C /* TSNDcommand.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26216EEE1F7004F790C /* TSNDcommand.h */; };
-		23B3F26816EEE842004F790C /* main.h in Sources */ = {isa = PBXBuildFile; fileRef = 23B3F26316EEE23C004F790C /* main.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +26,9 @@
 			dstSubfolderSpec = 0;
 			files = (
 				23B3F25516EEDEC2004F790C /* TSND121sample_forOpenGL.1 in CopyFiles */,
+				235D123C16F83BA600C2E062 /* TSND121.h in CopyFiles */,
+				235D123E16F83BAB00C2E062 /* main.h in CopyFiles */,
+				235D123D16F83BA900C2E062 /* TSNDcommand.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -141,10 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23B3F26416EEE842004F790C /* TSND121.cpp in Sources */,
-				23B3F26516EEE842004F790C /* TSND121.h in Sources */,
 				23B3F26616EEE842004F790C /* TSNDcommand.cpp in Sources */,
-				23B3F26716EEE842004F790C /* TSNDcommand.h in Sources */,
-				23B3F26816EEE842004F790C /* main.h in Sources */,
 				23B3F25316EEDEC2004F790C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +244,7 @@
 				23B3F25A16EEDEC2004F790C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -58,7 +58,7 @@ void display(){
 void idle(){
 	bufptr = buffer;    //無駄な操作かもしれぬ
 	//パケット読み取り．一気に送られてくるから1回呼び出しでOK
-	nbytes = read(fd, bufptr, buffer + sizeof(buffer) - bufptr - 1);
+	nbytes = (int)read(fd, bufptr, buffer + sizeof(buffer) - bufptr - 1);
 	
 	//bufferに溜まった分(nbytes)だけループを回してメッセージ内容表示
 	//        for(int i = 0; i < nbytes; i++){
@@ -77,7 +77,7 @@ void idle(){
                     }else{
 						sprintf(str, "0x00%02x%02x%02x", buffer[8+(3*i)], buffer[7+(3*i)], buffer[6+(3*i)]);
                     }
-					TSND.accel[i] = strtoimax(str, &ch, 16);	//requre [#include "inttypes.h"]
+					TSND.accel[i] = (int)strtoimax(str, &ch, 16);	//requre [#include "inttypes.h"]
 					TSND.rotate[i] = TSND.accel[i]*0.009;	//-10k~10kの値を取るらしいので,0.009を掛けることにより-90~90[deg]に変換した
                 }
 				
