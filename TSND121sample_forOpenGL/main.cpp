@@ -77,7 +77,7 @@ void idle(){
                     }else{
 						sprintf(str, "0x00%02x%02x%02x", buffer[8+(3*i)], buffer[7+(3*i)], buffer[6+(3*i)]);
                     }
-					TSND.accel[i] = strtoimax(str, &ch, 16);
+					TSND.accel[i] = strtoimax(str, &ch, 16);	//requre [#include "inttypes.h"]
 					TSND.rotate[i] = TSND.accel[i]*0.009;	//-10k~10kの値を取るらしいので,0.009を掛けることにより-90~90[deg]に変換した
                 }
 				
@@ -93,6 +93,7 @@ void idle(){
 				//				printf("[rot]x:%3f, y:%3f, z;%3f\n", TSND.rotate[0], TSND.rotate[1], TSND.rotate[2]);
 				//				printf("            dist_z:%.3f, v0:%.3f\n", TSND.distance[2], TSND.velocity[2]);
 				TSND.height_delta += TSND.distance[2];
+				printf("height_delta:%f\n", TSND.height_delta);
                 break;
                 
             case 0x82:  //気圧計速メッセージ
@@ -109,10 +110,45 @@ void idle(){
                 printf(" Height:%.3f[m]\n", TSND.height);
                 break;
 				
+			case 0x84:	//外部拡張端子データ通知
+				//外部拡張入出力レベル（0:Low, 1:High）
+				TSND.terminalIO[0] = buffer[6]&0x01;
+				TSND.terminalIO[1] = (buffer[6]&0x02)>>1;
+				TSND.terminalIO[2] = (buffer[6]&0x04)>>2;
+				TSND.terminalIO[3] = (buffer[6]&0x08)>>3;
+				
+				//外部拡張端子AD値
+				TSND.terminalAD[0] = 256*buffer[8]+buffer[7];
+				TSND.terminalAD[1] = 256*buffer[10]+buffer[9];
+				
+				break;
+				
             case 0x85:  //エッジ検出（オプションボタン押下など）
-                if(buffer[8] == 0x01){
-                    printf("Pressed button.\n");
-                }
+				//外部拡張エッジ検出有無（0:エッジ無し, 1:エッジ有り）
+				TSND.terminalEdge[0] = buffer[6]&0x01;
+				TSND.terminalEdge[1] = (buffer[6]&0x02)>>1;
+				TSND.terminalEdge[2] = (buffer[6]&0x04)>>2;
+				TSND.terminalEdge[3] = (buffer[6]&0x08)>>3;
+				
+				switch(buffer[7]){
+					case 0x00:
+						TSND.optionButton = 0;
+						break;
+						
+					case 0x01:
+						TSND.optionButton = 1;
+						printf("Button pressed.\n");
+						break;
+						
+					case 0x02:
+						TSND.optionButton = 2;
+						printf("Button released.\n");
+						break;
+						
+					default:
+						TSND.optionButton = 0;
+						break;
+				}
                 break;
 				
             case 0x87:  //計測エラー通知
@@ -198,7 +234,7 @@ void keyboard(int key, int x, int y){
                 TSND.initializeP = true;
                 isMeasuring = true;
 				TSND.height_delta = 0;
-                TSND.command.startMeasure(fd, 10);
+                TSND.command.startMeasure(fd, 60);
             }
             break;
             
@@ -250,7 +286,7 @@ void keyboard(int key, int x, int y){
 			break;
 			
 		case 'z':
-			TSND.command.setBuzzerVolume(fd, 0);
+			TSND.command.setBuzzerVolume(fd, 1);
 			break;
 			
 		case '1':

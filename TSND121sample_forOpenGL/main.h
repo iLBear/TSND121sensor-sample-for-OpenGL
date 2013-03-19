@@ -14,14 +14,15 @@
 #include "TSND121.h"	//for using TSND121 sensor
 
 
-int open_port();
 void display();
 void idle();
 void myInit();
 void keyboard();
 
-int fd;					//ポートのファイルディスクリプタ
 
+//TSND121
+int open_port();
+int fd;					//ポートのファイルディスクリプタ
 bool isMeasuring = false;	//計測中かどうか
 struct termios options;
 
